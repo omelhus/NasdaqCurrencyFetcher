@@ -1,4 +1,4 @@
-NasdaqCurrencyFetcher
+Nasdaq Currency Fetcher
 =====================
 
 Fetch up to date currencies from Nasdaq OMX

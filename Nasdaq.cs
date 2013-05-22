@@ -53,9 +53,10 @@ public class Nasdaq
 
     private static WebResponse CreateConnection()
     {
-        var request = WebRequest.Create(NasdaqUrl);
+        var request = (HttpWebRequest)WebRequest.Create(NasdaqUrl);
         request.Method = "POST";
         request.ContentType = "application/x-www-form-urlencoded";
+        request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
         PostData(request);
         var response = request.GetResponse();
         return response;
