@@ -8,7 +8,7 @@ using HtmlAgilityPack;
 
 public class Nasdaq
 {
-    public static String NasdaqUrl { get; set; }
+    const String NasdaqUrl = "http://www.nasdaqomxnordic.com/webproxy/DataFeedProxy.aspx";
 
     public static IEnumerable<Currency> FetchCurrencies()
     {
@@ -53,7 +53,7 @@ public class Nasdaq
 
     private static WebResponse CreateConnection()
     {
-        var request = WebRequest.Create("http://www.nasdaqomxnordic.com/webproxy/DataFeedProxy.aspx");
+        var request = WebRequest.Create(NasdaqUrl);
         request.Method = "POST";
         request.ContentType = "application/x-www-form-urlencoded";
         PostData(request);
